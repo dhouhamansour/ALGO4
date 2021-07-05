@@ -1,0 +1,29 @@
+ALGORITHM carte
+VAR 
+ i,j:INTEGER:=0;
+ c1:INTEGER;
+ tab: ARRAY_OF FLOAT[10]; 
+
+
+BEGIN
+
+FOR i FROM 0 TO tab.length-1 STEP 1  DO
+{
+    c1:=tab[i];
+    j:=i-1;
+
+WHILE (j>=0) and (tab[j]> c1) DO
+    {
+        tab[j+1]:=tab[j];
+        j:=j-1;
+    }
+END_WHILE
+  tab[j+1]:=c1
+}
+END_FOR
+
+ FOR i FROM 0 TO tab.length-1 STEP 1  DO
+    WRITE (tab[i]);
+ END_FOR
+
+END
